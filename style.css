@@ -1,0 +1,938 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0A222E;
+}
+
+/* Header padrão */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #0A222E;
+    color: #F29324;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    z-index: 2;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+    header {
+        font-size: 1rem;
+        padding: 0 10px;
+        justify-content: center;
+    }
+}
+
+.quicksand {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.quicksand {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+p,
+a,
+li {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    color: #F29324;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #DDD06F;
+}
+
+nav {
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* botão hamburguer - escondido no desktop */
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.menu-hamburguer .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #F29324;
+    border-radius: 2px;
+}
+
+/* responsividade para telas pequenas */
+@media (max-width: 768px) {
+    .menu-hamburguer {
+        display: flex;
+    }
+
+    .menu {
+        position: fixed;
+        top: 40px;
+        /* altura do header */
+        left: 0;
+        right: 0;
+        background-color: #0A222E;
+        flex-direction: column;
+        gap: 1px;
+        padding: 10px 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        z-index: 2;
+    }
+
+    .menu.active {
+        max-height: 500px;
+        /* suficiente para mostrar os itens */
+    }
+
+    .menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu a {
+        display: block;
+        padding: 10px 0;
+        font-size: 1.1rem;
+    }
+}
+
+
+main {
+    margin-top: 60px;
+    padding: 0;
+}
+
+.imagem-com-texto {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.imagem-com-texto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.painel-esquerdo {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 45%;
+    background-color: #0B3736;
+    /* verde petróleo escuro */
+    padding: 100px;
+    border-top-right-radius: 1000px;
+    border-bottom-right-radius: 500px;
+    color: #DDD06F;
+    /* amarelo claro para contraste no texto */
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.painel-esquerdo h1 {
+    color: #F29324;
+    /* laranja queimado para destaque */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.painel-esquerdo p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #FFF;
+    /* texto branco para boa leitura */
+}
+
+@media (max-width: 768px) {
+    .imagem-com-texto {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .painel-esquerdo {
+        position: static;
+        transform: none;
+        width: 100%;
+        padding: 40px 20px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .painel-esquerdo h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .painel-esquerdo p {
+        font-size: 0.95rem;
+        text-align: justify;
+    }
+
+    .imagem-com-texto img {
+        height: 250px;
+    }
+}
+
+.texto-residuos {
+    max-width: 1200rem;
+    /* corrigido de 1200rem para 1200px */
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #3d8e88;
+    /* fundo verde petróleo escuro */
+    color: white;
+}
+
+.texto-residuos h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #F29324;
+    /* laranja queimado */
+}
+
+.texto-residuos p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+
+#lixeiras-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    position: relative;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+/* caixa padrão: quadrado, centralizado com ícone */
+.residuo-box {
+    width: 150px;
+    height: 150px;
+    background-color: #3d8e88;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+    flex-direction: column;
+    color: #222;
+    overflow: hidden;
+}
+
+/* ícone ocupa toda a caixa quando fechada */
+.residuo-box .icone {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* descrição escondida */
+.residuo-box .info {
+    display: none;
+    max-width: 300px;
+    padding-left: 20px;
+    text-align: left;
+    color: #222;
+}
+
+/* estado ativo: quadrado vai para direita, info aparece e ícone diminui e fica alinhado à esquerda */
+.residuo-box.ativo {
+    width: 750px;
+    height: 250px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: #e9d8b5;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* quando ativo, ícone diminui e fica alinhado */
+.residuo-box.ativo .icone {
+    width: 60px;
+    height: 60px;
+    margin-left: 20px;
+}
+
+.residuo-box.ativo .info {
+    display: block;
+    color: #4b3b00;
+    padding-left: 20px;
+    flex: 1;
+    text-align: center;
+}
+
+/* cores específicas ao ativar */
+.residuo-box.ativo.marrom {
+    background-color: #e9d8b5;
+    color: #4b3b00;
+}
+
+.residuo-box.ativo.azul {
+    background-color: #a2c4f4;
+    color: #08306b;
+}
+
+.residuo-box.ativo.verde {
+    background-color: #b6d7a8;
+    color: #234d20;
+}
+
+.residuo-box.ativo.vermelho {
+    background-color: #f4cccc;
+    color: #990000;
+}
+
+.residuo-box.ativo.amarelo {
+    background-color: #fff2b2;
+    color: #665500;
+}
+
+.residuo-box.ativo.cinza {
+    background-color: #e0e0e0;
+    color: #333333;
+}
+
+@media (max-width: 768px) {
+    #lixeiras-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .residuo-box {
+        width: 90%;
+        height: auto;
+        padding: 20px 10px;
+    }
+
+    .residuo-box.ativo {
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .residuo-box.ativo .icone {
+        margin: 0 0 10px 0;
+    }
+
+    .residuo-box.ativo .info {
+        padding: 10px 15px;
+        text-align: center;
+    }
+
+    .texto-residuos {
+        padding: 15px;
+    }
+
+    .texto-residuos h2 {
+        font-size: 1.5rem;
+    }
+
+    .texto-residuos p {
+        font-size: 0.95rem;
+    }
+}
+
+#quimicos {
+    padding: 40px 20px;
+    background-color: #F3F0E7;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.container-quimicos {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: relative;
+    background: white;
+    /* para destacar o conteúdo do texto */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.imagem-quimicos {
+    width: 40%;
+    height: auto;
+    border-radius: 15px;
+    cursor: pointer;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.texto-quimicos {
+    width: 55%;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+    text-align: left;
+    /* melhor para leitura de textos longos */
+    color: #333;
+    /* um cinza escuro, menos agressivo que preto puro */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* fonte legível e moderna */
+    line-height: 1.6;
+    /* facilita a leitura */
+    padding: 0 10px;
+    /* um pouco de espaço interno para o texto "respirar" */
+}
+
+.container-quimicos.ativo .texto-quimicos,
+.imagem-quimicos:hover+.texto-quimicos {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.texto-quimicos h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    /* espaço abaixo do título */
+    color: #E99630;
+    /* título laranja */
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    /* destaca o título */
+    letter-spacing: 1px;
+}
+
+.texto-quimicos p {
+    margin-bottom: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.sub-qui {
+    margin-top: 20px;
+}
+
+.texto-quimicos ul {
+    margin-top: 1rem;
+    list-style: disc inside;
+    padding-left: 20px;
+    color: #555;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .container-quimicos {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .imagem-quimicos {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .texto-quimicos {
+        width: 100%;
+        text-align: justify;
+        padding: 0;
+    }
+
+    .texto-quimicos h3 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .texto-quimicos p,
+    .texto-quimicos ul {
+        font-size: 0.95rem;
+    }
+
+    #quimicos {
+        padding: 20px 10px;
+    }
+}
+
+#riscos {
+    margin-top: 20px;
+    border-radius: 15px;
+    padding: 60px 20px;
+    background-color: #E99630;
+    text-align: center;
+}
+
+#riscos h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.descricao-riscos {
+    font-size: 1rem;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.riscos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.risco-card {
+    padding: 25px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    box-shadow: -1px 3px 15px 0px rgba(0, 0, 0, 0.66);
+    -webkit-box-shadow: -1px 3px 15px 0px rgba(0, 0, 0, 0.66);
+    -moz-box-shadow: -1px 3px 15px 0px rgba(0, 0, 0, 0.66);
+}
+
+.risco-card:hover {
+    transform: translateY(-5px);
+}
+
+.risco-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.risco-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.risco-card p {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+    #riscos {
+        padding: 40px 15px;
+    }
+
+    #riscos h3 {
+        font-size: 1.5rem;
+    }
+
+    .descricao-riscos {
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+
+    .risco-card {
+        padding: 20px;
+    }
+
+    .risco-card img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    .risco-card h4 {
+        font-size: 1.1rem;
+    }
+
+    .risco-card p {
+        font-size: 0.9rem;
+    }
+}
+
+#praticas {
+    max-width: 1200rem;
+    padding: 100px 100px;
+    margin-top: 20px;
+    border-radius: 15px;
+    text-align: center;
+    color: black;
+    background-color: #F3F0E7;
+}
+
+#praticas h2 {
+    margin-bottom: 30px;
+}
+
+.tabs-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    border-bottom: 3px solid #3d8e88;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.tab-btn:hover {
+    color: #3d8e88;
+}
+
+.tab-btn.active {
+    color: #3d8e88;
+    font-weight: 700;
+}
+
+/* Underline animado */
+.underline {
+    position: absolute;
+    bottom: -3px;
+    height: 3px;
+    background: #3d8e88;
+    width: 0;
+    left: 0;
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1), width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Barra de progresso */
+.progress-bar {
+    height: 5px;
+    background: white;
+    border-radius: 3px;
+    width: 60%;
+    margin: 10px auto 0 auto;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #3d8e88;
+    width: 16.66%;
+    border-radius: 3px;
+    transition: width 0.4s ease;
+}
+
+/* Conteúdo */
+.tab-content {
+    display: none;
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    #praticas {
+        padding: 40px 20px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .tabs {
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .tab-btn {
+        flex: 1 1 100px;
+        font-size: 1rem;
+        padding: 8px 10px;
+    }
+
+    .progress-bar {
+        width: 90%;
+        margin: 10px auto 0;
+    }
+
+    .tab-content {
+        font-size: 1rem;
+        max-width: 90%;
+        margin: 20px auto 0;
+        line-height: 1.4;
+    }
+}
+
+#educacao {
+    max-width: 1000px;
+    margin: 60px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #F3F0E7;
+    text-align: center;
+    padding: 0 20px;
+
+}
+
+#educacao h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #F3F0E7;
+}
+
+.sub {
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #F3F0E7;
+}
+
+.educacao-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: flex-start;
+    /* ou center se preferir centralizado */
+    padding: 0 10px;
+}
+
+/* Faz os cards se ajustarem automaticamente ao tamanho da tela */
+.educacao-card {
+    flex: 1 1 280px;
+    /* Cresce, encolhe, largura base */
+    max-width: 280px;
+    background-color: #F3F0E7;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(11, 55, 54, 0.1);
+    color: #333;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+    font-weight: 600;
+}
+
+.educacao-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(11, 55, 54, 0.15);
+}
+
+.educacao-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 18px;
+}
+
+.educacao-card h3 {
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: #333;
+}
+
+.educacao-card p {
+    margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #333;
+}
+
+.educacao-card .dica {
+    font-style: italic;
+    font-weight: 400;
+    color: #333;
+    margin-top: 10px;
+}
+
+.educacao-artigos {
+    text-align: center;
+    max-width: 700px;
+    margin: 40px auto 0;
+    font-weight: 500;
+    color: #333;
+}
+
+.educacao-artigos h3 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #F3F0E7;
+}
+
+.educacao-artigos ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.educacao-artigos li {
+    background-color: #E99630;
+    padding: 12px 18px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(11, 55, 54, 0.1);
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+    width: 260px;
+}
+
+.educacao-artigos li:hover {
+    background-color: #1F5E5B;
+}
+
+.educacao-artigos a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.educacao-artigos a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    #educacao {
+        max-width: 95%;
+        margin: 40px auto;
+        padding: 0 10px;
+    }
+
+    .educacao-cards {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .educacao-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .educacao-card img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 12px;
+    }
+
+    .educacao-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .educacao-card p,
+    .educacao-card .dica {
+        font-size: 0.9rem;
+    }
+
+    .educacao-artigos {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .educacao-artigos ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .educacao-artigos li {
+        width: 100%;
+        max-width: none;
+        font-size: 1rem;
+    }
+}
+
+footer {
+    margin-top: 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 15px 10px;
+        font-size: 0.9rem;
+    }
+}
