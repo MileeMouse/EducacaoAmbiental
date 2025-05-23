@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preservar o meio ambiente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="java.js">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="menu-hamburguer" id="menu-hamburguer">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="menu" id="menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#residuos">Resíduos</a></li>
+                <li><a href="#quimicos">Químicos</a></li>
+                <li><a href="#riscos">Riscos</a></li>
+                <li><a href="#praticas">Práticas</a></li>
+                <li><a href="#educacao">Educação</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main id="inicio">
+        <div class="imagem-com-texto">
+            <img src="natureza.jpg" alt="Meio ambiente">
+            <div class="painel-esquerdo">
+                <h1>Preservar o meio ambiente é preservar a vida</h1>
+                <p>O meio ambiente é a casa de todos nós — e cuidar dele é uma responsabilidade compartilhada. Neste
+                    espaço, você encontrará informações práticas sobre o descarte correto de resíduos, uso seguro de
+                    produtos químicos, prevenção de riscos ambientais, reciclagem, ciclo de vida dos materiais e
+                    educação ambiental.</p>
+                <p>Pequenas atitudes geram grandes transformações. Vamos juntos construir um futuro mais sustentável!
+                </p>
+
+            </div>
+        </div>
+    </main>
+
+    <section id="residuos">
+        <div class="texto-residuos">
+            <h2>Resíduos</h2>
+            <p>Resíduos são materiais descartados após o uso, e seu destino final faz toda a diferença para o meio
+                ambiente. Eles podem ser classificados em diferentes tipos, como orgânicos, recicláveis e
+                resíduos perigosos.</p>
+            <p>Entender essas categorias é essencial para garantir o descarte adequado, reduzir a poluição e contribuir
+                para um futuro mais sustentável.</p>
+
+        </div>
+    </section>
+
+    <section id="lixeiras-container">
+        <div class="residuo-box marrom" onclick="toggleLixeira(this)">
+            <img class="icone"
+                src="data:image/png;base64,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"
+                alt="external-trash-household-equipment-itim2101-blue-itim2101">
+            <div class="info">
+                <h3>Resíduos Orgânicos</h3>
+                <p>Resíduos orgânicos são restos de alimentos, folhas, cascas e outros materiais biodegradáveis que
+                    se decompõem naturalmente. Quando descartados corretamente, podem ser transformados em adubo por
+                    meio da compostagem, ajudando a reduzir o volume de lixo e a enriquecer o solo.</p>
+            </div>
+        </div>
+
+        <div class="residuo-box azul" onclick="toggleLixeira(this)">
+            <img class="icone"
+                src="data:image/png;base64,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"
+                alt="external-trash-household-equipment-itim2101-blue-itim2101">
+            <div class="info">
+                <h3>Papel</h3>
+                <p>O papel é um dos materiais mais fáceis de reciclar. Jornais, revistas, caixas, cadernos e embalagens
+                    podem ser reaproveitados diversas vezes. No entanto, papéis sujos, engordurados ou plastificados não
+                    devem ser destinados à reciclagem.</p>
+            </div>
+        </div>
+
+        <div class="residuo-box vermelho" onclick="toggleLixeira(this)">
+            <img class="icone"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAGLElEQVR4nO1bXUwVRxTel/rSh/a17Wvb17bxrX0w8c5ZFDGI8RIFTKHIDqKRSwpaEDQKWNCAVG1RChjU+lMpYIwoPyqJ/Yl90TZpkxabNG1tWlMDtWpTbLvNt+zYsAg7+zP3bpCTnAjX2TnnfDtz5sz5Lpo2L/PiSXgslsmJRjhjdzmRGQll7K5BdNkgWq6pFE7UkPJg3bVe5Zs3N6SlmQO7dpljZ86Y5sWLkVD4cqG+3vINPhbrekb4ABCNYHIYSnXAM+n5ujqxJS6FDoBB9AcmH4/Qm3cqfLMBuBM6ANzeY6kO0k2Fn6EEHY/HFxiMNXLGfo5AcvOkBtFNJG3EMNezvumiDb4BMCZRNG8cOZLype1VR7u6Hq6EwACMdnU9ngDwubEF3vYNQDweXwAQxEp47JKgUzjROCa/39+f8iXuVPhkBz+uqRJuH4dRLIZQDgfe825iMDYKI7e6u1MesFN/7e4WAHyrqRKDsesw8uOJEykP2Kk/HD8+uQUYu6YMAE70KYx8F0Jd8PfgoNlcWGi2FBWZ/wwNBZ4PtYoNwCcqARiCka87OgI7fKmx8WHGHtmzJ/B88MnaAowNKgPAIOqDkeutrYGcvXfunPlmZuZDAMozMwOfLNcOHhQroFclAMdh5PP9+wM5+1F1teVsU2Ghpfi5b9u2QHNe3bdPAPqBMgA40fswcqW52bejv/X0mBuXLkXXxvz+2DEreRUTWZ/d7u31Pe+VpiZxCrQpA8AgaoGRi42Nvh3tSCQsRztKS///rLTU+qyzrMz6/cHgoOd5hxsaxArYqw4AxnbBSH9dna/g/zx/3qxctcrcmJ4+5W3fFquCyPyyrc36/9aSEk9z99fWqm2KQjhjW639un277xUwceGC+c3hw9M+76mpsQIoXbbM+vfA+vWe5kUOsU+BKk2VcKIyGPmwqipQwnIq3vaegoIplxmv2+xUZaUAIKEMAEPXDRg5VlEhXZ9/1tJi7e3NWVlmY36++e/w8JQx2O9Y/s7b3M1TpzwBcLSiQhyDRcoA4Lqe60xgM6mXwMYdQO0tKpoGlGxyNRjLUQcAURaMyCao9zZsCLy0ZRW2LAB0fYUyAAwiHUbeMQxpx3rt5OQ1uU0MDDwyWc6kuFNYIOs6KQOAE70GI7sLCqScwlGHIw1FzxeHDkkfbzgut+K4RHHU0yNla3d+vgVAka6/qgyA4ljsFRipy8uTcqrTUfR4KXBEcSSTb6C1ubnW+HVELysDYF0s9iKM1GRnuzo0pcR1eYt3zp6ddiO87SiZ3exVZ2eLU+AFZQDwxYufg5EtK1e6OoRMjrHIAW7B78jJeeS1WBRHuDC52cPpgbFvMPasMgBeX7ToaRgpW758VmdwXZa55iL4nXbw21evNn939BqRCypWrDBlruCJjAxxDD6lDID4ZJvcLFmyZFZnRFAzqRhXv3atdJt7x5o1s9qETxYACxc+oakUTjQBQ2hpzeQMWl1hAzDbNngwNCTGTSgNPmxuwLkF/Lbb0WGyARjTVIths0RhfUVmtiQoq2N9faIZ8pN6ANgkN4A+fBgACBCCNEZ/OX1aPScQZW4gKZyAEPTdo/adgRuCCmfsY0218BC5gbD0q/Z29ZyAEPTdYQx9eFkHUcTgGNuUnu563GEMxuLyFClOQAj67jB2VZIbEOWsH5XlCuCLck5ACPruMIY+vMybt9/MX5xos0ydjjEGY1vsZ6wucSQ4ASc3gD68m2OC9UFAmkcxGHsLz6KqlOUE4JumWjhRvSw3sMnuAhlpac94tYNnRCdJlhMwiOo01cIFNyCxP8Ve9m3LcXdwa7sp5QSEoO8uyw34TX4zXZ7cOAHOWKmmWgybG0AfPioAHC0vV88JTOMGEglpAGSOsiDPt9v9Q6WcgBD03WEMffioAPBuScnk2FgsU1Mths0NoA8flS2QFE5gGjeQnx8ZAMA5KucEhKDvDmPow8sCoPkUWQB22pwA1/WX/NqSFvTdZbmBZAEgOIESXX/ery3P3AD68FEBICmcwJQ/oyG6vz4tzZXDTwYAN0+eNOELZ+xeqN8Mn004UWdYCS4sNRhr15IleURPcsYOcMZupTpwywfGDsCnpAEwL9rckf8Aj3Ya66V7rfYAAAAASUVORK5CYII="
+                alt="external-trash-household-equipment-itim2101-blue-itim2101">
+            <div class="info">
+                <h3>Plástico</h3>
+                <p>O plástico está presente em embalagens, sacolas, garrafas, potes e muitos outros itens do dia a dia.
+                    É reciclável, mas precisa estar limpo e seco. Plásticos misturados a outros materiais ou muito
+                    contaminados não são reaproveitados.</p>
+            </div>
+        </div>
+
+        <div class="residuo-box verde" onclick="toggleLixeira(this)">
+            <img class="icone"
+                src="data:image/png;base64,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"
+                alt="external-trash-household-equipment-itim2101-blue-itim2101">
+            <div class="info">
+                <h3>Vidro</h3>
+                <p>Garrafas, potes e frascos de vidro são 100% recicláveis e podem ser reutilizados inúmeras vezes sem
+                    perder qualidade. Antes do descarte, retire tampas e lave os recipientes. Vidros quebrados devem ser
+                    embrulhados com segurança para evitar acidentes.</p>
+            </div>
+        </div>
+
+        <div class="residuo-box amarelo" onclick="toggleLixeira(this)">
+            <img class="icone"
+                src="data:image/png;base64,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"
+                alt="external-trash-household-equipment-itim2101-blue-itim2101">
+            <div class="info">
+                <h3>Metal</h3>
+                <p>Alumínio e aço, presentes em latas de bebidas, conservas, tampas e embalagens metálicas, têm alto
+                    valor na reciclagem. Basta limpar os resíduos antes do descarte e separar corretamente. A reciclagem
+                    do alumínio economiza até 95% de energia em relação à produção original.</p>
+            </div>
+        </div>
+
+        <div class="residuo-box cinza" onclick="toggleLixeira(this)">
+            <img class="icone"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAF10lEQVR4nO1bPXAbRRS+hjQU0AItoQVaqKGCCbRQQws0wEBLIFQwQyZ7tytLuydLluUfOTb+k/8UW5YcyZbkvwQnLaGgIcPfTNIc851uNbZs+X5XpzF+M2+iUVb73vtu9+3b95017VIuxZcQKq4RxkuE8r91JqxBUNsXKtZ0Zr6rqRTCxI24g3UFg4nraoKn4hoMGAnTmiuWrHrz0No9fDgQCl/gE3yDj7eoeCd6ABgvYXIYijvgXjpfLDlbQqxGDoDO+F+YfLt5L/ZAeyl8cwD4UwEAwp487iDdVPoZSdD5fP6KTvn3hPHf4k5u/k8G8QhJGzFc6Kyvu58KN4IDQMUjTFLeasS+tP1qubrTWQnhAajuxB6QX92oNiIAgF2ALUD5d4EByOfzVwCCXAn/uyTYLYSJx5i8sXs/9iXerfDJSXqPNVVCnONwEIshlMOh97yb6JQ/hJGtnf3YA+7Wu9t7cvk/0FSJTnkLRir13dgD7tZqrSW3QFMZAITySlR1QevggZUdnbJGxqas1kF4AOBTGwC+qQ4AxpdgZH1zO7TDi8vrnYxdXNkIPd+dze32fJQXlQGgMz4FI2sbd0M529i7byV4pgNAgmdDnyzwyTn3CwoBEFkYWblTDeXszNyS7Ww2X7AVn2fmV0LNCZ8cADLKACBUMBhZWi0HdrS2c2DRobTt7GataVVqLbuTg+9qjYPA8xZXy86K4lQZADoTP8LIwtJ6YEfHC7O2oxNTc53v8Pn4d839I9/zwicnCf6gDgAqvoWRucW1gHv/Fytl5iyaPPm08RkrACuhVK7Z/5+fmPE19+zimtqmKIQw8TWM/Bxivzb3jqyNyunb5czcsh0ASw7b/+bGp/3llfkVeQp8pakSwvhnMHJ7thgqYXUrnnZ2dPLEZcbvNoNPbQDEp8oA0Bn/GEYK04ue6/PltU17bw+JrJXJTZ5eEftHnaR4XLd8VpuF6QV5F/hIGQCEpj7sTmA9l7qPwHC5Og7USP524ORqMPGBQgD4+zDiNUFFsbT9bCMbgIT5njIAjAR/G0b8PKHpgMkNK+isZNlLc2NTzilgvqUMAMJSb8JIJlfw5JR9vCXb28DP8WYfl+mcr+II+cVeAYb5hjIAbiXE6zBiZse97csQBU53ceSm6cyYPZ7S1GvKAKBUvAIjfDjv6pCfEne7de/UjVAWR7JkdrMn0qPtLUCSV5UBQAh/CUaS5oirQ8gTGIsc4Ba86Ty9xeWNM4sjXJjc7A2JEXvsT4nEi8oASKVSz7cTWsbT1dTtmruD4LPj9lgxnLfqrcNTuWCIZy0vV3CWal+vDcN4ThkAeXCFzjsC5zkjg+qlctzwyITnNrfIjJ1rU74bYBjGM5pKIUw8hSG0tHo5g1ZX1ABgzl724ItzEXqqNPiouYHuLRC03Y4Ok1MG/6GpFuKwRFG9InNeEvSq9UabE9CZ+FU5ALrDDaAPHwUAEoQwjdG+cAKDzA30hROQgr57VNxAVFrear8LoFNR1lQLcbgB9OHjDlzqeqWunhOQgr67X24AY1HNndUf6FaMwZGHy9NAcQJS0HeHseVSxZNzspwNol65AviinBOQgr47jKEP7+PJPCEs9bmXOh1jdMq/wG/kNXogOIEg3IBkfRCQ5lMMJr50qwC7OQH4pqkWwsR1r9wAc5ohhpF+wa8d/EZ2krxyAjrl32iqhTjcgJf9KfdyUFvdd4feeaYPnIAU9N29cgNBk1+vy5MbJ0AM/ommWvQON7AwMABM9oMT6OYG0If3CoCXoyzM7/vCCUhB3x3GvHR3+wWA5ATwRx2aajEcbgB9+EHZAnjPSDkncJobmBwYAPrCCUhB3x3G0If3CoAWULwCkM60u0pkyHxVUy2EJK965Qb6BYDkBG4y82VNtRCHG0AfflAAAKOsnBM42Rrn/xoJdw6/HwBU67sWfCFM/BPpm+HnCaEiGVWCi055QuuXmKb5LGH8JqHi97gDhw/wBT71DYBL0S6O/Adiv2sQzF/BIgAAAABJRU5ErkJggg=="
+                alt="external-trash-household-equipment-itim2101-blue-itim2101">
+            <div class="info">
+                <h3>Não reciclável (Rejeito)</h3>
+                <p>Rejeitos são materiais que não podem ser reciclados nem reaproveitados, como papel higiênico, fraldas
+                    descartáveis, restos de varrição, esponjas de limpeza e embalagens muito contaminadas. Esses itens
+                    devem ser descartados no lixo comum, sempre bem embalados para evitar vazamentos e odores.</p>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="quimicos">
+        <div class="container-quimicos">
+            <img src="lixo quimico.jpg" alt="Lixos Químicos" class="imagem-quimicos" />
+            <div class="texto-quimicos">
+                <h3>Resíduos Químicos</h3>
+
+                <p>São materiais que contêm substâncias tóxicas ou perigosas para a saúde humana e o meio ambiente. Por
+                    isso, exigem descarte especial em pontos de coleta específicos.</p>
+                <p>Exemplos de resíduos químicos incluem:</p>
+
+                <ul>
+                    <li>Produtos de limpeza e desinfetantes</li>
+                    <li>Tintas, solventes e vernizes</li>
+                    <li>Pilhas, baterias e eletrônicos</li>
+                    <li>Medicamentos vencidos ou fora de uso</li>
+                </ul>
+
+                <p class="sub-qui"> <strong> Nunca descarte esse tipo de material no lixo comum, no vaso sanitário ou na
+                        pia. Procure
+                        postos de
+                        coleta ou campanhas de recolhimento em sua cidade.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="riscos">
+        <h3>Riscos</h3>
+        <p class="descricao-riscos">
+            O descarte inadequado de resíduos pode gerar sérios riscos à saúde pública e ao meio ambiente. Veja alguns
+            exemplos:
+        </p>
+
+        <div class="riscos-grid">
+            <div class="risco-card">
+                <img src="https://img.icons8.com/ios-filled/100/fire-element.png" alt="Risco de Incêndio" />
+                <h4>Incêndio</h4>
+                <p>Materiais inflamáveis, se descartados incorretamente, podem provocar explosões ou incêndios.</p>
+            </div>
+
+            <div class="risco-card">
+                <img src="https://img.icons8.com/ios-filled/100/skull.png" alt="Risco Tóxico" />
+                <h4>Tóxico</h4>
+                <p>Substâncias químicas perigosas podem contaminar o solo, a água e afetar a saúde humana e animal.</p>
+            </div>
+
+            <div class="risco-card">
+                <img src="https://img.icons8.com/ios-filled/100/biohazard.png" alt="Risco Biológico" />
+                <h4>Biológico</h4>
+                <p>Resíduos hospitalares ou orgânicos contaminados podem transmitir doenças infecciosas.</p>
+            </div>
+
+            <div class="risco-card">
+                <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/broken-bottle.png"
+                    alt="Objetos Cortantes" />
+                <h4>Cortantes</h4>
+                <p>Vidros quebrados e metais pontiagudos podem causar ferimentos durante o manuseio ou coleta.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="praticas">
+        <h2>Práticas Sustentáveis</h2>
+        <div class="tabs-container">
+            <div class="tabs">
+                <button class="tab-btn active" data-target="reciclagem">Reciclagem</button>
+                <button class="tab-btn" data-target="agua">Economia de Água</button>
+                <button class="tab-btn" data-target="compostagem">Compostagem</button>
+                <button class="tab-btn" data-target="energia">Energia Renovável</button>
+                <button class="tab-btn" data-target="transporte">Transporte Sustentável</button>
+                <button class="tab-btn" data-target="consumo">Consumo Consciente</button>
+                <span class="underline"></span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+
+        <div class="tab-content active" id="reciclagem">
+            <p>Separar corretamente papel, plástico, vidro e metal contribui para a redução do lixo e permite a
+                reutilização de materiais. Reciclar é transformar resíduos em novos recursos.</p>
+        </div>
+
+        <div class="tab-content" id="agua">
+            <p>Fechar a torneira ao escovar os dentes, consertar vazamentos e usar a água da chuva são atitudes simples
+                que fazem a diferença na preservação dos nossos recursos hídricos.</p>
+        </div>
+
+        <div class="tab-content" id="compostagem">
+            <p>Compostar resíduos orgânicos como restos de alimentos e folhas secas ajuda a reduzir o lixo doméstico e
+                ainda produz um adubo natural rico em nutrientes para plantas e hortas.</p>
+        </div>
+
+        <div class="tab-content" id="energia">
+            <p>Fontes renováveis como a solar e a eólica são alternativas sustentáveis que reduzem a emissão de gases
+                poluentes e ajudam a combater as mudanças climáticas.</p>
+        </div>
+
+        <div class="tab-content" id="transporte">
+            <p>Optar por bicicleta, transporte coletivo ou caronas diminui o número de veículos nas ruas, reduzindo a
+                poluição do ar e o consumo de combustíveis fósseis.</p>
+        </div>
+
+        <div class="tab-content" id="consumo">
+            <p>Repensar hábitos de compra, evitar desperdícios e dar preferência a produtos duráveis, recicláveis e de
+                origem ética são atitudes que promovem um consumo mais consciente e responsável.</p>
+        </div>
+    </section>
+
+    <section id="educacao" class="educacao-section">
+        <h2>Educação Ambiental: Descarte de Resíduos Químicos e Perigosos</h2>
+        <p class="sub">Descartar corretamente resíduos químicos e perigosos é essencial para proteger a saúde pública e
+            preservar o meio ambiente.</p>
+
+        <div class="educacao-cards">
+
+            <div class="educacao-card">
+                <img width="64" height="64"
+                    src="https://img.icons8.com/external-fauzidea-glyph-fauzidea/64/external-battery-ecology-fauzidea-glyph-fauzidea.png"
+                    alt="pilhas" />
+                <h3>Pilhas e Baterias</h3>
+                <p>Contêm metais pesados que contaminam o solo e a água se descartados no lixo comum.</p>
+                <p><strong>Onde descartar:</strong> Pontos de coleta em supermercados, lojas de eletrônicos e postos
+                    públicos.</p>
+                <p class="dica">Dica: Armazene em local seco e leve aos locais indicados para garantir uma reciclagem
+                    segura.</p>
+            </div>
+
+            <div class="educacao-card">
+                <img width="32" height="32"
+                    src="https://img.icons8.com/external-jumpicon-glyph-ayub-irawan/32/external-drugs-coronavirus-jumpicon-glyph-jumpicon-glyph-ayub-irawan.png"
+                    alt="remedio" />
+                <h3>Medicamentos Vencidos</h3>
+                <p>Descartá-los no vaso sanitário ou no lixo comum pode causar contaminação da água e prejudicar a fauna
+                    aquática.</p>
+                <p><strong>Onde descartar:</strong> Farmácias participantes de programas de recolhimento e unidades de
+                    saúde.</p>
+                <p class="dica">Dica: Mantenha os medicamentos em suas embalagens originais e entregue nos pontos de
+                    coleta adequados.</p>
+            </div>
+
+            <div class="educacao-card">
+                <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/housekeeping.png"
+                    alt="Produtos de Limpeza" />
+                <h3>Produtos de Limpeza</h3>
+                <p>Se descartados de forma inadequada, podem contaminar o solo, os lençóis freáticos e afetar organismos
+                    vivos.</p>
+                <p><strong>Onde descartar:</strong> Postos de coleta específicos ou campanhas organizadas por
+                    prefeituras.</p>
+                <p class="dica">Dica: Nunca jogue restos de produtos de limpeza em pias, ralos ou no vaso sanitário.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="educacao-artigos">
+        <h3>Leitura Recomendada</h3>
+        <p class="sub">Confira materiais confiáveis para se aprofundar no descarte adequado de resíduos perigosos:</p>
+        <ul>
+            <li>
+                <a href="https://ecoprimos.com.br/blog/residuos-perigosos-entenda-a-classificacao-quais-sao-e-como-trata-los/"
+                    target="_blank" rel="noopener noreferrer">
+                    ECOPRIMOS - Resíduos Perigosos: Entenda a classificação, quais são e como tratá-los.
+                </a>
+            </li>
+            <li>
+                <a href="https://www.ufsm.br/pro-reitorias/proinfra/uma/2021/03/19/residuos-perigosos-o-que-sao-e-como-lidar-da-maneira-correta"
+                    target="_blank" rel="noopener noreferrer">
+                    UMA - Resíduos perigosos: O que são e como lidar da maneira correta.
+                </a>
+            </li>
+            <li>
+                <a href="https://www.ecycle.com.br/residuos-perigosos/" target="_blank" rel="noopener noreferrer">
+                    eCycle – Produtos Perigosos e Como Descartá-los.
+                </a>
+            </li>
+        </ul>
+    </div>
+    </section>
+
+    <footer>
+        <p>Obrigado por visitar nosso site e por se importar com o meio ambiente. Sua atitude faz a diferença!
+        </p>
+        <p>&copy; 2025 Preservar o meio ambiente. Todos os direitos reservados.</p>
+        <p>Desenvolvido por Camile Cristina</p>
+    </footer>
+
+    <script>
+        function toggleLixeira(elemento) {
+            if (elemento.classList.contains('ativo')) {
+                // Se já está ativo, desativa ele
+                elemento.classList.remove('ativo');
+            } else {
+                // Fecha todas as outras antes
+                document.querySelectorAll('.residuo-box.ativo').forEach(el => {
+                    el.classList.remove('ativo');
+                });
+                // Ativa o clicado
+                elemento.classList.add('ativo');
+            }
+        }
+
+        const container = document.querySelector('.container-quimicos');
+        const imagem = container.querySelector('.imagem-quimicos');
+
+        imagem.addEventListener('mouseenter', () => {
+            container.classList.add('ativo');
+        });
+
+
+        const tabs = document.querySelectorAll('#praticas .tab-btn');
+        const contents = document.querySelectorAll('#praticas .tab-content');
+        const underline = document.querySelector('#praticas .underline');
+        const progressFill = document.querySelector('#praticas .progress-fill');
+
+        function updateUnderline(button) {
+            const rect = button.getBoundingClientRect();
+            const containerRect = button.parentElement.getBoundingClientRect();
+            underline.style.width = `${rect.width}px`;
+            underline.style.left = `${rect.left - containerRect.left}px`;
+        }
+
+        function updateProgress(index, total) {
+            const percent = ((index + 1) / total) * 100;
+            progressFill.style.width = `${percent}%`;
+        }
+
+        tabs.forEach((tab, idx) => {
+            tab.addEventListener('click', () => {
+                // Remove active de todos
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+
+                // Adiciona active no selecionado
+                tab.classList.add('active');
+                contents[idx].classList.add('active');
+
+                // Atualiza underline e progresso
+                updateUnderline(tab);
+                updateProgress(idx, tabs.length);
+            });
+        });
+
+        // Inicializa underline na primeira tab
+        window.addEventListener('load', () => {
+            updateUnderline(tabs[0]);
+            updateProgress(0, tabs.length);
+        });
+
+        // Atualiza underline e progresso se a janela for redimensionada
+        window.addEventListener('resize', () => {
+            const activeTab = document.querySelector('#praticas .tab-btn.active');
+            if (activeTab) updateUnderline(activeTab);
+        });
+    </script>
+
+    <script>
+        const menuHamburguer = document.getElementById('menu-hamburguer');
+        const menu = document.getElementById('menu');
+
+        menuHamburguer.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            menuHamburguer.classList.toggle('active');
+        });
+    </script>
+
+
+</body>
+
+</html>
