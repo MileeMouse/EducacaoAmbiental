@@ -130,7 +130,7 @@ nav {
         background-color: #0A222E;
         flex-direction: column;
         gap: 1px;
-        padding: 10px 0;
+        padding: 0px 0;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
